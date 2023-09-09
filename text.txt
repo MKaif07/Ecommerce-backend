@@ -1,0 +1,7 @@
+Controllers handle CRUD 👍
+
+cors -> cross origin
+front end at 3000
+server at 8080
+
+commn b/w 3000 & 8080 croos origin
