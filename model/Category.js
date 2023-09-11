@@ -1,19 +1,16 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-// Schema
-const brandSchema = new Schema({
+const categorySchema = new Schema({
   label: { type: String, required: true, unique: true },
   value: { type: String, required: true, unique: true },
 });
 
-const virtual = brandSchema.virtual("id");
-
+const virtual = categorySchema.virtual('id');
 virtual.get(function () {
   return this._id;
 });
-
-brandSchema.set("toJSON", {
+categorySchema.set('toJSON', {
   virtuals: true,
   versionKey: false,
   transform: function (doc, ret) {
@@ -21,4 +18,4 @@ brandSchema.set("toJSON", {
   },
 });
 
-exports.Brand = mongoose.model("Brand", brandSchema);
+exports.Category = mongoose.model('Category', categorySchema);
